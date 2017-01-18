@@ -1,0 +1,30 @@
+---
+title: "MtNevins Bio381"
+author: "Matthias Nevins"
+date: "January 18, 2017"
+output: html_document
+---
+
+# Matthias Nevins 
+
+##Computational Biology 381
+
+### Heading 
+
+* [Assignment 1](test.html)  
+* [Assignment 2](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) 
+
+![](frog.jpg)   
+
+```{r}
+## this is a test comment 
+
+
+
+```
+
+
+
+* something   
+
+
