@@ -1,5 +1,5 @@
 ---
-title: "Computational Biology 381"
+title: "MtNevins Bio381"
 author: "Matthias Nevins"
 date: "January 18, 2017"
 output: html_document
@@ -7,9 +7,9 @@ output: html_document
 
 # Matthias Nevins 
 
-##Univeristy of Vermont
+##Computational Biology 381
 
-### Assignments 
+### Heading 
 
 * [Assignment 1](test.html)  
 * [Assignment 2](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) 
@@ -27,5 +27,4 @@ output: html_document
 
 * something   
 
-mistake 
 
