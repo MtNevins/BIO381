@@ -1,20 +1,21 @@
 ---
-title: "MtNevins Bio381"
+title: "Computational Biology 381"
 author: "Matthias Nevins"
-date: "January 18, 2017"
+date: "January 19, 2017"
 output: html_document
 ---
+![](lakechamp1.jpg)
 
-# Matthias Nevins 
+# COMPUTATIONAL BIOLOGY PORTFOLIO     
+## University of Vermont 
 
-##Computational Biology 381
+###ASSIGNMENTS 
 
-### Heading 
+* [Assignment 1]()  
+* [Assignment 2]()
+* [Assignment 3]()   
 
-* [Assignment 1](test.html)  
-* [Assignment 2](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) 
-
-![](frog.jpg)   
+ 
 
 ```{r}
 ## this is a test comment 
@@ -22,9 +23,7 @@ output: html_document
 
 
 ```
-
-
-
-* something   
+#### [GitHub Profile](https://github.com/MtNevins)
+#### [Matthias.Nevins@uvm.edu](matthias.nevins@uvm.edu)
 
 
