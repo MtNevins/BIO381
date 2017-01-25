@@ -18,9 +18,9 @@ output:
 * [Assignment 2]()
 * [Assignment 3]()   
 
- ###HOMEWORK
+###HOMEWORK   
  
- * [Homework 2](homework2.Rmd)   
+ * [Homework 2](homework2.html)   
 
 ```{r}
 ## this is a test comment 
