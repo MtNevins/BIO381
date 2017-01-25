@@ -1,14 +1,23 @@
 ---
-title: "Homework2"
+title: "HOMEWORK 2"
 author: "Matthias Nevins"
-date: "January 25, 2017"
+date: ""
 output: html_document
 ---
 
 this is the [first tool]
 
-#HOMEWORK 2 
-##Thinking on Paper 
+#Thinking on Paper 
+
+###Path Diagram 
+![](hmwk2_path_IMG_0310.jpg)   
 
 
-![](hmwk2_path_IMG_0310.jpg)
+###Logic Tree
+![](hmwk2_IMG_0313.jpg) 
+
+
+##Look-up-table & Mock Data
+![](hmwk2IMG_0311.JPG)
+
+
