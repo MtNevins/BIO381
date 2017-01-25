@@ -27,15 +27,20 @@ I will be contributing to the work of exploring functional responses in a given 
 
 ###Path Diagram 
 ![](hmwk2_path_IMG_0310.jpg)   
+
 This path diagram explores the potential relationships between the response variable (R = Species diversity) and two predictor variables (Pm = Management and Pc = climate scenarios). 
 
 ###Logic Tree
 ![](hmwk2_IMG_0313.jpg) 
+
+
 This Logic Tree explores the potential causal relationships between variables as they relate to a hypothesis (shown at the top of the image). 
 
 
 ###Look-up-table & Mock Data
 ![](hmwk2IMG_0311.JPG)
+
+
 This image shows a *look-up-table* testing three predicting variables related to management. BAU, RR, and RT are three different management approaches which would be applied to the labdscape simulation. 
 
 The *mock data* explores the potential of the null hypothesis and describes an additional variable that might be at play (Bedrock and surficial geology as the main predictor/driver of species diversity change over time). 
