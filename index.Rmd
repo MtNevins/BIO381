@@ -1,8 +1,11 @@
 ---
 title: "Computational Biology 381"
 author: "Matthias Nevins"
-date: "January 19, 2017"
-output: html_document
+date: ""
+output:
+  prettydoc::html_pretty:
+    theme: hpstr
+    highlight: github
 ---
 ![](lakechamp1.jpg)
 
@@ -15,7 +18,9 @@ output: html_document
 * [Assignment 2]()
 * [Assignment 3]()   
 
+ ###HOMEWORK
  
+ * [Homework 2](homework2.Rmd)   
 
 ```{r}
 ## this is a test comment 
