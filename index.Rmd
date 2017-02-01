@@ -12,15 +12,13 @@ output:
 # COMPUTATIONAL BIOLOGY PORTFOLIO     
 ## University of Vermont 
 
-###ASSIGNMENTS 
-
-* [Assignment 1]()  
-* [Assignment 2]()
-* [Assignment 3]()   
+  
 
 ###HOMEWORK   
  
- * [Homework 2](homework2.html)   
+ * [Homework 2](homework2.html) 
+ * [Homework 3](Nevins_Diagram.html)
+ 
 
 ```{r}
 ## this is a test comment 
