@@ -1,35 +1,191 @@
 ---
-title: "Untitled"
+title: "CONSERVATION EASEMENTS"
 author: "Matthias Nevins"
 date: "February 1, 2017"
-output: beamer_presentation
+output: 
+  beamer_presentation: 
+    colortheme: whale
+    fonttheme: serif
+    highlight: espresso
+    incremental: no
+    theme: Madrid
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+## AGENDA 
 
-## R Markdown
+- Introduction
+    + Land Trusts
+    + Land Conservation Tools
+- Conservation Easements
+    + What are they? How do they work?
+    + Components of Conservation Easements
+- Regional Examples: Conservation Easements in New England
+- Discussion 
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+##What is a Land Trust?  
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+\bigskip
+\bigskip
 
-## Slide with Bullets
+- A non-profit charitable organization working with landowners to protect thier land
+    + Land trusts hold interest in property to protect it
+   
+\begin{picture}(320,250)
+\put(25,60){\includegraphics[height=5cm]
+{landowner.jpg}}
+\put(170,60){\includegraphics[height=5.5cm]
+{faceyfarm.jpg}}
+\put(260,00){\begin{minipage}[t]{1\linewidth}
+{words coordinate axis by $\theta$.}
+\end{minipage}}
+\end{picture}
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+## 
 
-## Slide with R Output
+\begin{picture}(320,250)
+\put(10,20){\includegraphics[height=6.8cm]
+{decisionDia.jpg}}
 
-```{r cars, echo = TRUE}
-summary(cars)
-```
+\put(260,00){\begin{minipage}[t]{1\linewidth}
+{ }
+\end{minipage}}
+\end{picture}
 
-## Slide with Plot
 
-```{r pressure}
-plot(pressure)
-```
+## Landowner Goal: Keep the land as a farm or woodland forever
+\begin{picture}(320,250)
+\put(20,40){\includegraphics[height=6.4cm]
+{table.png}}
 
+\put(260,00){\begin{minipage}[t]{1\linewidth}
+{ }
+\end{minipage}}
+\end{picture}
+
+##Conservation Easements (CE)
+- Legal agreement between
+  
+  a landowner and 
+  
+  a land trust or
+  
+  public agency
+  
+- Restricts the ammouny and 
+
+Type of **development** 
+
+that can occur on the land
+
+- Protects the property's
+
+conservation values **forever,** 
+
+**in perpetuity** - 
+
+perpetual easement
+
+\begin{picture}(320,250)
+\put(160,260){\includegraphics[height=3.5cm]
+{rose.jpg}}
+\put(210,350){\includegraphics[height=3.5cm]
+{cows.jpg}}
+\end{picture}
+
+##Property Rights
+
+\begin{picture}(320,250)
+\put(40,14){\includegraphics[height=8.3cm]
+{rights1.png}}
+\end{picture}
+
+##Landowner's Property Rights with a CE
+
+\begin{picture}(320,250)
+\put(7,18){\includegraphics[height=8.3cm]
+{rights2.png}}
+\end{picture}
+
+##BASIC COMPONENTS OF CONSERVATION EASEMENT
+- **GRANT OF CONSERVATION EASEMENT**
+
+- PURPOSES
+
+- PROHIBITED ACTS
+
+- RESERVED RIGHTS  
+
+\begin{picture}(320,250)
+\put(50,100){\includegraphics[height=5.5cm]
+{GRANT.jpg}}
+\end{picture}
+
+##BASIC COMPONENTS OF CONSERVATION EASEMENT
+- GRANT OF CONSERVATION EASEMENT
+
+- **PURPOSES**
+
+- PROHIBITED ACTS
+
+- RESERVED RIGHTS  
+
+\begin{picture}(320,250)
+\put(50,100){\includegraphics[height=5.5cm]
+{PURP.jpg}}
+\end{picture}
+
+##BASIC COMPONENTS OF CONSERVATION EASEMENT
+-  RANT OF CONSERVATION EASEMENT
+
+- PURPOSES
+
+- **PROHIBITED ACTS**
+
+- RESERVED RIGHTS  
+
+\begin{picture}(320,250)
+\put(50,100){\includegraphics[height=5.5cm]
+{PROHIB.jpg}}
+\end{picture}
+
+##BASIC COMPONENTS OF CONSERVATION EASEMENT
+- GRANT OF CONSERVATION EASEMENT
+
+- PURPOSES
+
+- PROHIBITED ACTS
+
+- **RESERVED RIGHTS**  
+
+\begin{picture}(320,250)
+\put(50,100){\includegraphics[height=5.5cm]
+{RES1.jpg}}
+\end{picture}
+
+##BASIC COMPONENTS OF CONSERVATION EASEMENT
+- GRANT OF CONSERVATION EASEMENT
+
+- PURPOSES
+
+- PROHIBITED ACTS
+
+- **RESERVED RIGHTS**  
+
+\begin{picture}(320,250)
+\put(50,100){\includegraphics[height=5.5cm]
+{RES2.jpg}}
+\end{picture}
+
+##REGIONAL EXAMPLES 
+
+\begin{picture}(320,250)
+\put(10,15){\includegraphics[height=8cm]
+{tully.jpg}}
+\end{picture}
+
+##DISCUSSION
+
+\begin{picture}(320,250)
+\put(10,15){\includegraphics[height=8cm]
+{eagleres.jpg}}
+\end{picture}
