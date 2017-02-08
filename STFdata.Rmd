@@ -1,0 +1,16 @@
+---
+title: "Homework 4"
+author: "Matthias Nevins"
+date: "February 8, 2017"
+output: html_document
+---
+
+```{r}
+STF<- read.table("STFdata1.csv", header=T, sep=",", stringsAsFactors = F)
+str(STF)
+table(STF$tree_no)
+table(STF$species)
+summary(STF)
+head(STF)
+tail(STF)
+```

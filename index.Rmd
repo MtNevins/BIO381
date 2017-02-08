@@ -24,6 +24,10 @@ __________
   * [Beamer.Rmd file](Nevins_Beamer.Rmd)
   * [Beamer.pdf](Nevins_Beamer.pdf)
   * [Original powerpoint in .pdf form](Nevins_ConservationEasementsPptx .pdf)
+
+####Homework 4
+  * [Creating an .csv file](STFdata.html)
+  
   
  
 
