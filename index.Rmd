@@ -27,9 +27,9 @@ __________
 
 ####Homework 4
   * [Creating an .csv file](STFdata.html)
+  * [Regular Expressions: Problem solutions](RegulasExpressions_hwk4.Rmd)
   
   
- 
 
 ```{r}
 ## this is a test comment 
