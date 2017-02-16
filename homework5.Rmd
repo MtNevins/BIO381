@@ -1,0 +1,168 @@
+---
+title: "Nevins_Homework_#5"
+author: "Matthias Nevins"
+date: "February 15, 2017"
+output: html_document
+theme: cerulean
+---
+###___________________________________________
+
+####**Questions 1:** *Suppose x = 1.1, a = 2.2, and b = 3.3. Assign each expression to the value of the variable zand print the value stored in z.*
+
+#### a. $$x^{a^b}$$
+```{r}
+# assign value to variables:
+x=1.1
+a=2.2
+b=3.3
+
+#A.
+proba<-x^(a^b)
+print(proba)
+```
+
+#### b. $$(x^a)^b$$
+```{r}
+probb<-(x^a)^b
+print(probb)
+```
+#### c. $$3x^3 + 2X^2 + 1$$
+```{r}
+probc<-(3*(x^3))+2*(x^2)+1
+print(probc)
+```
+
+#### d. The digit in the second place of z
+```{r}  
+##A.
+floor((proba %% 1) *10)
+##B. 
+floor((probb %% 1) * 10)
+##C. 
+floor((probc %% 1)*10)
+```
+
+####**Question 2**:*Using the rep and seq functions, create the following vectors*
+
+#####A. (1,2,3,4,5,6,7,8,7,6,5,4,3,2,1)
+```{r}
+c(seq(1:8),rep(7:1))
+
+```
+#####B. (1,2,2,3,3,3,4,4,4,4,5,5,5,5,5)
+```{r}
+rep(1:5, c(1,2,3,4,5))
+
+```
+#####C. (5,4,4,3,3,3,2,2,2,2,1,1,1,1,1)
+```{r}
+rep(5:1, c(1,2,3,4,5))
+
+```
+
+####**Question 3**: *Create a vector of two random uniform numbers. In a spatial map, these can be interpreted as x and y coordinates that give the location of an individual (such as a marked forest tree in a plot that has been mapped). Using one of R’s inverse trigonometry functions (asin(), acos(), or atan()), convert these numbers into polar coordinates (If you don’t know what polar coordinates are, read about them on the web or in your calculus textbook).*
+
+```{r}
+
+i<-runif(2)
+i[1]
+i[2]
+
+x = i[1]
+print(x)
+y = i[2]
+
+r= sqrt((x^2)+(y^2))
+print(r)
+#theta = "t"
+t=atan(y/x)
+print(t)
+
+```
+
+####**Question 4:** *Suppose that queue <- c("sheep", "fox", "owl", "ant") and that queue represents the animals that are lined up to enter Noah’s Ark, with the sheep at the front of the line. Using R expressions, update the queue successively as*
+```{r}
+queue <-c("sheep", "fox", "owl", "ant")
+```
+######a.
+```{r}
+quA <-c(queue, "serpent")
+print(quA)
+```
+######b.
+```{r}
+quB<-quA[-1]
+print(quB)
+```
+######c.
+```{r}
+quC<-c("donkey", quB)
+print(quC)
+```
+######d.
+```{r}
+quD<-quC[-5]
+print(quD)
+```
+######e.
+```{r}
+quE <-quD[-3]
+print(quE)
+```
+######f. 
+```{r}
+quF<-c(quE[-3], "aphid", "ant")
+print(quF)
+```
+######g.
+```{r}
+quG <- which(quF == "aphid")
+print(quG)
+```
+
+####**Question 5**:*Use R to create a vector of all of the integers from 1 to 100 that are not divisible by 2, 3, or 7*
+
+```{r}
+z5<-1:100
+z5[z5%%2!=0 & z5%%3!=0  &  z5%%7!=0]
+```
+
+#### **Question 6**: *Create a vector z of 1000 random uniform numbers*
+
+##### a. create a vector that contains 3 numbers: the proportion of the numbers in z that are less than 0.10, greater than 0.90, and between 0.45 and 0.55.
+```{r}
+z6 <- runif(1000)
+z6v <- c(mean(z6 < 0.1), mean(z6 > 0.9), mean(z6 > 0.45 & z6 < 0.55))
+print(z6v)
+```
+#####b. Making successive copies of z, transform your vector of uniform numbers in the following ways
+
+######b1. log (base 10) of z
+```{r}
+z6log<-log10(z6)
+head(z6log)
+z6vlog<-c(mean(z6log < 0.1), mean(z6log > 0.9), mean(z6log >0.45 & z6log<0.55))
+print(z6vlog)          
+```
+#######b2. z^2
+```{r}
+z6sq<-(z6)^2
+head(z6sq)
+z6vsq<-c(mean(z6sq < 0.1), mean(z6sq > 0.9), mean(z6sq >0.45 & z6sq<0.55))
+print(z6vsq)
+```
+#######b3. exp^z
+```{r}
+z6exp<-exp(z6)
+head(z6exp)
+z6vexp<-c(mean(z6exp < 0.1), mean(z6exp > 0.9), mean(z6exp >0.45 & z6exp<0.55))
+print(z6vexp)
+```
+#######b4. square root of z
+```{r}
+z6sqrt<-sqrt(z6)
+head(z6sqrt)
+z6vsqrt<-c(mean(z6sqrt < 0.1), mean(z6sqrt > 0.9), mean(z6sqrt >0.45 & z6sqrt<0.55))
+print(z6vsqrt) 
+```
+####-----------------------------------------
