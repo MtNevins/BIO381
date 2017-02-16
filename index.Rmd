@@ -1,21 +1,17 @@
 ---
-title: "Computational Biology 381"
-author: "Matthias Nevins"
-date: ""
+title: "Computational Biology 381: Portfolio"
+author: "Matthias Nevins, M.S."
+date: "Univeristy of Vermont"
 output:
-  prettydoc::html_pretty:
+    prettydoc::html_pretty:
     theme: hpstr
     highlight: github
 ---
 ![](lakechamp1.jpg)
 
-# COMPUTATIONAL BIOLOGY PORTFOLIO     
-## University of Vermont 
-
 ______
 
 ###HOMEWORK   
-
 __________
 
 ####[Homework 2](homework2.html) 
@@ -28,15 +24,12 @@ __________
 ####Homework 4
   * [Creating an .csv file](STFdata.html)
   * [Regular Expressions: Problem solutions](RegulasExpressions_hwk4.html)
+
+####Homework5
+  * [Homework 5 Solutions](homework5.html)
+
+
   
-  
-
-```{r}
-## this is a test comment 
-
-
-
-```
 #### [GitHub Profile](https://github.com/MtNevins)
 
 
