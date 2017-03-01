@@ -25,9 +25,11 @@ __________
   * [Creating an .csv file](STFdata.html)
   * [Regular Expressions: Problem solutions](RegulasExpressions_hwk4.html)
 
-####Homework5
+####Homework 5
   * [Homework 5 Solutions](homework5.html)
 
+####Homework 6
+  * [R Functions Assignment](Nevins_Homework6_Master.html)
 
   
 #### [GitHub Profile](https://github.com/MtNevins)
