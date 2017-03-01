@@ -6,10 +6,11 @@ output: html_document
 ---
 
 ```{r}
-STF<- read.table("STFdata1.csv", header=T, sep=",", stringsAsFactors = F)
+STF<-read.table ("STFdata1.csv", header=T, sep=",", stringsAsFactors = F)
 str(STF)
 table(STF$tree_no)
 table(STF$species)
+table(STF$dbh)
 summary(STF)
 head(STF)
 tail(STF)

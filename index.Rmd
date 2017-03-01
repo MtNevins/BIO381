@@ -1,6 +1,6 @@
 ---
 title: "Computational Biology 381: Portfolio"
-author: "Matthias Nevins, M.S."
+author: "Matthias Nevins, M.S. Candidate"
 date: "University of Vermont"
 output:
     prettydoc::html_pretty:

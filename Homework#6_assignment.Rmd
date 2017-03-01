@@ -1,0 +1,55 @@
+---
+title: "Homework 6"
+author: "Matthias Nevins"
+date: "February 22, 2017"
+output: html_document
+---
+
+```{r}
+# Takes a subsetted list of functions from Hadley Advanced R
+# Assigns each randomly to a student in the class
+# 19 February 2017
+# NJG
+
+# Ensure that the same random number sequence is used by everyone.
+set.seed(100) 
+help(set.seed)
+# The Hadley R functions:
+firstToLearn <- c("str", "?")
+
+operators <- c("%in%", "match", "=", "<-", "<<-", "$", "[",
+               "[[", "head", "tail", "subset", "with", "assign", "get")
+comparisons <- c("all.equal", "identical", "!=", "==", ">", ">=", "<", "<=",  "is.na", "complete.cases",  "is.finite")
+
+basicMath <- c("*", "+", "-", "/", "^", "%%", "%/%", "abs", "sign", "acos", "asin", "atan", "atan2", "sin", "cos", "tan", "ceiling", "floor", "round", "trunc", "signif", "exp", "log", "log10", "log2", "sqrt", "max", "min", "prod", "sum", "cummax", "cummin", "cumprod", "cumsum", "diff", "pmax", "pmin", "range", "mean", "median", "cor", "sd", "var", "rle")
+
+logicalSets <- c("&", "|", "!", "xor", "all", "any", "intersect", "union", "setdiff", "setequal", "which")
+
+vectorsMatrices <- c("c", "matrix", "length", "dim", "ncol", "nrow", "cbind", "rbind", "names", "colnames", "rownames", "t", "diag", "sweep", "as.matrix", "data.matrix")
+
+makingVectors <- c("c", "rep", "rep_len", "seq", "seq_len", "seq_along", "rev", "sample", "choose", "factorial", "combn", "is.character", "is.numeric", "is.logical", "as.character", "as.numeric", "as.logical")
+
+listsDataFrames <- c("list", "unlist",  "data.frame", "as.data.frame", "split", "expand.grid")
+
+output <- c("print", "cat", "message", "warning", "dput", "format", "sink", "capture.output", "sprintf")
+
+readingWritingData <- c("data", "count.fields", "read.csv", "write.csv", "read.delim", "write.delim", "read.fwf", "readLines", "writeLines", "readRDS", "saveRDS", "load", "save")
+
+# Combine all of the function lists and randomize the order:
+RFunctions <- c(firstToLearn, operators, comparisons, basicMath, logicalSets, vectorsMatrices, makingVectors, listsDataFrames, output, readingWritingData)
+
+RFunctions <- sample(RFunctions)
+
+# Create class list
+classNames <- c("Alger", "Ashlock", "Burnham", "Clark", "Kazenal", "Keller", "Looi", "Makhukov", "Mickuki", "Nevins", "Southgate") 
+
+# Assign functions
+functionAssignments <- rep_len(classNames, length.out=length(RFunctions))
+
+# Bind the two columns into a data frame
+functionsFinal <- data.frame(functionAssignments,RFunctions)
+functionsFinal
+
+splitDF <- split(functionsFinal, functionsFinal$functionAssignments)
+splitDF$Nevins
+```

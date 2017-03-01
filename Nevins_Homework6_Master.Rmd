@@ -1,0 +1,163 @@
+---
+title: "Nevins_Homework6"
+author: "Matthias Nevins"
+date: "March 1, 2017"
+output: html_document
+---
+###  '<'
+#### Matthias Nevins
+##### R funtion "<" is a *RELATIONAL OPERATION*. This binary operation can be used to compare atomic vectors. 
+```{r}
+# e.g. You could assign a variable "a" to a random set of numbers and then determing which of those numbers are less than a selected value
+runif(10)
+a <- runif(10)
+a < .05
+# Or you could create two variables and compare them
+x<-5
+y<-6
+x<y
+```
+
+### 'writeLines'
+#### Matthias Nevins 
+##### At the most basic level, writeLines is used to write text lines from r code. The more advanced use of this function can write text to other types of connected files (text files, .html, etc.). See help(writeLines) for more details on advanced usage. 
+
+```{r}
+# For example, writeLines can be used with "LETTERS"
+# We can assign LETTERS to variable B
+b<-LETTERS 
+# Printing b gives us all the leters seperated by ""
+head(b)  
+writeLines(LETTERS) # writeLines applied to letters removes the "" separator
+
+# Another Example 
+
+a<-c("ant", "bee", "bug", "tree", "fern", "crow") 
+writeLines(a)
+
+
+# To write to an actual file you can create a new text file and write to that file. See the example below using the file.create function 
+file.create("sample.txt")
+fileConn <- file("sample.txt")
+writeLines(a, con = fileConn, sep = " ")
+file.show("sample.txt")
+
+```
+
+###  'seq_along'
+#### Matthias Nevins
+#### seq_along generates regular sequences. seq_along(x) takes a vector for x, and it creates a sequence upto the count of elements in the vector. seq() acts like seq_along() except when passed a vector of length 1, in which case it acts like seq_len(). 
+```{r}
+# EXAMPLE
+a <- c(8, 9, 10)
+b <- c(9, 10)
+c <- 10
+
+seq_along(a)
+seq_along(b)
+seq_along(c)
+
+# Compared to the seq() function 
+
+seq(a)
+
+seq(b)
+
+seq(c)
+
+```
+
+###  'union'
+#### Matthias Nevins 
+#### union() is used on a **set** of vectors. union will join two vectors and discard any duplicated values. 
+
+```{r}
+unionX <- c(1:5)
+unionX 
+
+unionY <- c(3:8)
+unionY
+
+union(unionX,unionY)
+# The duplicates are removed and the set is now joined with union()
+## More perfect?? 
+```
+
+###  'is.na'
+#### Matthias Nevins 
+#### is.na is a generic function that indicates which elements are missing within a vector. "NA" is a logical constant of length 1 which contains a missing value indicator.
+
+```{r}
+isX <- c(1,2,NA,4,5,NA,6)
+is.na(isX) # is.na indicates which elemenst are missing 
+
+is.na(c(1,4,8,2,4,NA,6,NA,9))
+
+xx <- c(0:4)
+is.na(xx) <- c(2, 4)
+is.na(xx)
+
+
+```
+
+###  'data.frame' 
+#### Matthias Nevins 
+#### Description: The function data.frame() creates data frames, tightly coupled collections of variables which share many of the properties of matrices and of lists, used as the fundamental data structure by most of R's modeling software.
+
+### Arguments: 
+ * row.names - "NULL" for a single integer or character sting specifying a column to be used as row names. You can use a character or integer to give a specific row name for the data frame. 
+ * check.rows - if TRUE you can check to make sure the row length and names are consistent 
+ * check.names - if TRUE you can check to make sure the row names of the variables in the data frame are valid and to ensure there are no duplicates
+ * stringAsFactors - this logical argument asks if vectors should be converted to factors? The default is TRUE. Make stringAsFactors = FALSE to not convert vectors
+```{r}
+# We explored a similar example in class. See below for an example of how to construct a data.frame
+
+# Begin by creating variables 
+number <- 1:20
+species <- rep(c("Maple", "Beech", "Pine", "Oak", "Spruce"), each=4)
+basalArea <- runif(20)
+
+dFrame <- data.frame(number,species,basalArea, stringsAsFactors = FALSE)
+print(dFrame)
+str(dFrame)
+```
+
+###  'match' 
+#### Matthias Nevins 
+#### Description: The 'match' function returns or finds the first occurance of the first argument in the second argument. The %in% function can also be used in a similar way to return a logical vector (TRUE,FALSE) 
+
+  * Usage: match(x,table,nomatch=NA_integer_,incomparables = NULL) or x %in% table
+  * Arguments:  
+    * x: a vector or NULL and represent the values to be matched
+    * table: a vector or NULL and represent the values to be matched against the first argument 
+    * nomatch: the value to be returned if there is no match
+    *incomparables: defines the a vector of the values that cannot be matched. FALSE=NULL 
+
+##### EXAMPLE: Using 'match' and '%in%'
+  * Argument 1: x=3 
+  * Argument 2: table = 2:6
+```{r}
+match(x=3, table=2:6)
+# The match function returns the first occurance of the first argument (x=3), in the second argument (table = 2:6). In this example the vector '3' is found in the second position of the table
+# If you would like to return a logical vector you can use %in%
+3%in%2:6 # This asks if 3 is in your table 2:6. It returns "TRUE" indictating that the first argument is indeed found in the second
+```
+
+
+###  'message'
+#### Matthias Nevins 
+#### The message function generates a diagnostic message from the argument you define. These messages are not warnings or errors, but nevertheless represented as condition. 
+
+  * Usage: message(..., domain = NULL, appendLF = TRUE)
+  * Arguments: 
+    * ...: zero or more objects which displayed as the message. Multiple objects will be pasted together with no seperator. 
+    *domain: If NA, messages will not be translated 
+    *appendLF: Logical argument should messages 
+
+```{r}
+message("ABC","DEFGH") # Both arguments are not separated 
+message("good morning everyone", appendLF = FALSE) # you can display a separated message by including the whole message within a single object
+
+```
+
+
