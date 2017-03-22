@@ -1,0 +1,259 @@
+---
+title: "Nevins_Homework_8"
+author: "Matthias Nevins"
+date: "March 21, 2017"
+output: html_document
+---
+
+##HOMEWORK: 8 
+
+1. Set up a new markdown file for this homework. For each of the 4 models create a function to run the model. You will need to think carefully about the formal parameters for the input, the default values, and the output from your function. The output should just include model results, not any graphics
+    * create the function in a single R chunk
+    * immediately after the function run it with its default values
+    * create a tiny fake data set (use some of the random number functions you now know about) and run your code on the fake data.
+
+2. Now, for each of the 4 statistical models, write a graphics function that will generate a nice plot of the results. The formal parameters for input to your graphics function should be the same as the input for your corresponding stats function. Again, illustrate the graphics function for your default settings and for the tiny fake data set you created in 1.
+  
+### FAKE DATA SET 
+```{r}
+x <- runif(20)
+y <- runif(20)
+aVar <- rep(c("Acer", "Pinus"), each=10)
+bVar <- rep(c("Poor", "Rich", "Dry", "Mesic"), each=5)
+dFrame <- data.frame(x, y, aVar,bVar)
+print(dFrame)
+```
+
+## REGRESSION ANALYSIS
+```{r}
+###########################################################################
+# FUNCTION: Regression
+# input: x = 1:10, y = runif(10)
+# output: linear model list and data summary 
+# This function runs a basic linear regression 
+####################################################################
+Regression <- function(x=1:10, y=runif(10)){
+  rmod <- lm(y~x)
+  
+  out <- list(rmod, summary(rmod))
+return(out)
+}
+
+#####################################################################
+# END OF FUNCITON
+#####################################################################
+```
+### Test Function 
+```{r}
+Regression()
+```
+### Fake Data Run
+```{r}
+Regression(x=dFrame$x, y=dFrame$y)
+```
+```{r}
+###########################################################################
+# FUNCTION: lrPlot 
+# lrPlot() plots a basic linear regression from the Regression() function
+# input: x = 1:10, y = runif(10)
+# output: linear regression plot
+###########################################################################
+
+lrPlot <- function(x=1:10, y=runif(10)){
+  
+  plot <- plot(y=y,x=x,pch=21,bg="lightblue",cex=2, main="LINEAR REGRESSION PLOT")
+  regMod <- lm(y~x)
+  abline(regMod)
+  
+return(plot)
+}
+
+###########################################################################
+# END OF FUNCITON
+###########################################################################
+```
+
+##TEST lrPlot()
+```{r}
+lrPlot()
+```
+##Test lrPlot on Fake Data
+```{r}
+lrPlot(x=dFrame$x, y=dFrame$y)
+```
+##ANOVA
+
+```{r}
+###########################################################################
+# FUNCTION: ANOVA
+# input: x = discrete variables (x= Acer, Pinus); y=runif(10))
+# output: anova model list and data summary 
+####################################################################
+ANOVA <- function(x=as.factor(c(rep("Acer", 3), rep("Pine", 7))), y=runif(10)){
+  amod <- aov(y~x)
+  
+  out <- list(amod, summary(amod))
+return(out)
+}
+
+#####################################################################
+# END OF FUNCITON
+#####################################################################
+```
+
+### Test Function 
+```{r}
+ANOVA()
+```
+### Fake Data Run
+```{r}
+ANOVA(x=dFrame$aVar, y=dFrame$y)
+```
+
+## ANOVA PLOT 
+```{r}
+###########################################################################
+# FUNCTION: anovaPlot 
+# lrPlot() plots anova analysis 
+# input: x=as.factor(c(rep("Acer", 3), rep("Pine", 7)), y=runif(10)
+# output: anova plot
+###########################################################################
+
+anovaPLot <- function(x=as.factor(c(rep("Acer", 3), rep("Pine", 7))), y=runif(10)){
+  plot <- boxplot(y~x, main="ANOVA PLOT")
+  
+return(plot)
+}
+
+###########################################################################
+# END OF FUNCITON
+###########################################################################
+```
+
+###Test anovaPlot()
+```{r}
+anovaPLot()
+```
+### anovaPlot(FAKE DATA)
+```{r}
+anovaPLot(x=dFrame$aVar, y=dFrame$y)
+```
+##CONTINGENCY TABLE ANALYSIS
+
+```{r}
+###########################################################################
+# FUNCTION: contingency
+# input: x = discrete variables; discrete y variables 
+# output: Chi-square analysis output list and summary 
+####################################################################
+contingency <- function(x=as.factor(c(rep("Acer", 3), rep("Pinus", 7))), y=as.factor(c(rep("Poor", 2), rep("Rich", 3), rep("Dry", 2), rep("Mesic", 3)))){
+  matrix1<- rbind(x,y)
+  chisqMod <- chisq.test(matrix1)
+  
+  out <- list(chisqMod, summary(chisqMod))
+return(out)
+}
+#####################################################################
+# END OF FUNCITON
+#####################################################################
+```
+
+### Test Function 
+```{r}
+contingency()
+```
+
+### Fake Data Run
+
+```{r}
+contingency(x=dFrame$aVar, y=dFrame$bVar)
+```
+###CONTINGENCY PLOT
+
+```{r}
+###########################################################################
+# FUNCTION: contPlot 
+# contPlot() produces a mosaic plot for a contingency chi-square analysis
+# input: x=as.factor(c(rep("Acer", 3), rep("Pinus", 7))), y=as.factor(c(rep("Poor", 2), rep("Rich", 3), rep("Dry", 2), rep("Mesic", 3)))
+# output: mosaic plot
+###########################################################################
+
+contPlot <- function(x=as.factor(c(rep("Acer", 3), rep("Pinus", 7))), y=as.factor(c(rep("Poor", 2), rep("Rich", 3), rep("Dry", 2), rep("Mesic", 3)))){
+
+  matrix1 <- rbind(x,y)
+  plot <- mosaicplot(x=matrix1,
+           shade=TRUE)
+
+return(plot)
+}
+
+###########################################################################
+# END OF FUNCITON
+###########################################################################
+```
+
+###Test contPlot()
+```{r}
+contPlot()
+```
+###TEST contPLot(FAKE DATA)
+```{r}
+contPlot(x=dFrame$aVar, y=dFrame$bVar)
+```
+##LOGISTIC REGRESSION
+```{r}
+###########################################################################
+# FUNCTION: logreg
+# input: x = continuous variables; discrete y variables 
+# output: logistic regression analysis output list and summary 
+####################################################################
+logreg <- function(x=runif(10), y=as.factor(c(rep("Poor", 2), rep("Rich", 3), rep("Dry", 2), rep("Mesic", 3)))){
+  logregMod <- glm(y~x,family=binomial(link="logit"))
+  
+  out <- list(logregMod, summary(logregMod))
+return(out)
+}
+
+#####################################################################
+# END OF FUNCITON
+#####################################################################
+```
+
+### Test Function 
+```{r}
+logreg()
+```
+
+### Fake Data Test 
+```{r}
+logreg(x=dFrame$x, y=dFrame$bVar)
+```
+
+```{r}
+###########################################################################
+# FUNCTION: logPlot 
+# logPlot() produces a mosaic plot for a contingency chi-square analysis
+# input: x = continuous variables; discrete y variables 
+# output: mosaic plot
+###########################################################################
+logPlot <- function(x=runif(10), y=as.factor(c(rep("Poor", 2), rep("Rich", 3), rep("Dry", 2), rep("Mesic", 3)))){
+  logregMod <- glm(y~x,family=binomial(link="logit"))
+  plot<- plot(x=x, y=y,pch=21,bg="tan",cex=2.5)
+curve(predict(logregMod,data.frame(x),type="response"),add=TRUE,lwd=2)
+return(plot)
+}
+
+###########################################################################
+# END OF FUNCITON
+###########################################################################
+```
+
+###Test logPlot()
+```{r}
+logPlot()
+```
+
+### Test logPlot(FAKE DATA)
+```{r}
+logPlot(x=dFrame$x, y=dFrame$bVar)
+```

@@ -30,6 +30,9 @@ __________
 
 ####Homework 6
   * [R Functions Assignment](Nevins_Homework6_Master.html)
+  
+#### Homework 8 
+  * [Model Functions](Nevins_homework_8.html)
 
   
 #### [GitHub Profile](https://github.com/MtNevins)
