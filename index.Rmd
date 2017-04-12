@@ -33,6 +33,12 @@ __________
   
 #### Homework 8 
   * [Model Functions](Nevins_homework_8.html)
+  
+#### Homework 9 
+
+
+#### Homework 10 
+  * [for loop assignment](Nevins_Homework_10.html)
 
   
 #### [GitHub Profile](https://github.com/MtNevins)

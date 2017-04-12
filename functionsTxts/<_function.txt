@@ -1,0 +1,14 @@
+###  '<'
+#### Matthias Nevins
+##### R funtion "<" is a *RELATIONAL OPERATION*. This binary operation can be used to compare atomic vectors. 
+```{r}
+# e.g. You could assign a variable "a" to a random set of numbers and then determing which of those numbers are less than a selected value
+runif(10)
+a <- runif(10)
+a < .05
+# Or you could create two variables and compare them
+x<-5
+y<-6
+x<y
+```
+
