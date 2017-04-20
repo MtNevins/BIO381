@@ -1,0 +1,171 @@
+---
+title: "Nevins_Homwork_9"
+author: "Matthias Nevins"
+date: "March 28, 2017"
+output: html_document
+---
+
+
+```{r}
+myData<-read.csv("MBR_Overstory_obs_wrking_demo.csv", header=T) 
+#str(myData)
+
+dbh <- myData$tree_dbh
+ba <- myData$tree_ba
+stand <- myData$STAND
+species <- myData$tree_spp
+data <- data.frame(stand, species,dbh,ba)
+#print(data)
+
+```
+
+## REGRESSION ANALYSIS
+```{r}
+###########################################################################
+# FUNCTION: Regression 
+# input: x = 1:10, y = runif(10)
+# output: linear model list and data summary 
+# This function runs a basic linear regression 
+####################################################################
+Regression <- function(x=1:10, y=runif(10)){
+  rmod <- lm(y~x)
+  
+  out <- c(slope=summary(rmod)$coefficients[2,1],
+             pValue=summary(rmod)$coefficients[2,4],
+             tvalue=summary(rmod)$coefficients[2,3],
+             standarderror=summary(rmod)$coefficients[2,2],
+             RSquared=summary(rmod)$adj.r.squared)
+  
+  return(out)
+}
+
+#####################################################################
+# END OF FUNCITON
+#####################################################################
+```
+### Test Function 
+```{r}
+Regression()
+```
+### myData Run
+```{r}
+Regression(x=data$dbh, y=data$ba)
+```
+```{r}
+###########################################################################
+# FUNCTION: lrPlot 
+# lrPlot() plots a basic linear regression from the Regression() function
+# input: x = 1:10, y = runif(10)
+# output: linear regression plot
+###########################################################################
+
+lrPlot <- function(x=1:10, y=runif(10)){
+  
+  rmod <- lm(y~x)
+  
+  plot <- c(plot(x=x, y=y,pch=21, bg="lightblue", cex=1.5, main="LINEAR REGRESSION PLOT", xlab = "Tree DBH (inches)", ylab = "Tree Basal Area (sq. ft./acre"), abline(rmod))
+
+  
+return(plot)
+}
+
+###########################################################################
+# END OF FUNCITON
+###########################################################################
+```
+
+
+##TEST lrPlot()
+```{r}
+lrPlot()
+```
+
+##Test lrPlot on myData
+```{r}
+lrPlot(x=data$dbh, y=data$ba)
+```
+##ANOVA
+
+```{r}
+###########################################################################
+# FUNCTION: ANOVA
+# input: x = discrete variables (x= Acer, Pinus); y=runif(10))
+# output: anova model list and data summary 
+####################################################################
+ANOVA <- function(x=as.factor(c(rep("Acer", 3), rep("Pine", 7))), y=runif(10)){
+  amod <- aov(y~x)
+  
+  out <- list(amod, summary(amod))
+return(out)
+}
+
+#####################################################################
+# END OF FUNCITON
+#####################################################################
+```
+
+### Test Function 
+```{r}
+ANOVA()
+```
+### myData Run
+```{r}
+#ANOVA(x=data$tree_spp, y=data$tree_dbh)
+```
+
+## ANOVA PLOT 
+```{r}
+###########################################################################
+# FUNCTION: anovaPlot 
+# anovaPlot() plots anova analysis 
+# input: x=as.factor(c(rep("Acer", 3), rep("Pine", 7)), y=runif(10)
+# output: anova plot
+###########################################################################
+
+anovaPLot <- function(x=as.factor(c(rep("Acer", 3), rep("Pine", 7))), y=runif(10)){
+
+  plot <- boxplot(y~x, main="ANOVA PLOT", xlab="Stand", ylab="Tree DBH - inches")
+  
+return(plot)
+}
+
+###########################################################################
+# END OF FUNCITON
+###########################################################################
+```
+
+###Test anovaPlot()
+```{r}
+anovaPLot()
+```
+### anovaPlot(mydata)
+```{r}
+#anovaPLot(x=data$tree_spp, y=data$tree_dbh)
+#anovaPLot(x=data$stand, y=data$dbh)
+```
+```{r}
+library(fGarch)
+```
+
+## MOCK DATA
+```{r}
+#dbh
+hist(dbh)
+mean(dbh)
+dbh2<-na.omit(dbh)
+mean(dbh2)
+sd(dbh2)
+dbhNew<-rsnorm(1667, mean = 17.52, sd = 7.912, xi = 2.4)
+hist(dbhNew)
+
+#ba
+hist(ba)
+ba2<-na.omit(ba)
+mean(ba2) #2.015
+sd(ba2) #1.96
+##
+#rep.int(1:), 5)
+
+
+```
+
