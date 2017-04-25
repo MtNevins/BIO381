@@ -10,11 +10,18 @@ output:
 ![](lakechamp1.jpg)
 
 ______
+### R-package presentation 
+  * [randomForest demo](randomForest_demo.html)
 
-###HOMEWORK   
+### Independant Research Presentation 
+  * []()
+
+______________
+### HOMEWORK   
 __________
 
-####[Homework 2](homework2.html) 
+#### [Homework 2](homework2.html) 
+
 ####Homework 3
   * [Diagram from Typora](Nevins_Diagram.html)
   * [Beamer.Rmd file](Nevins_Beamer.Rmd)
