@@ -15,6 +15,7 @@ ba <- myData$tree_ba
 stand <- myData$STAND
 species <- myData$tree_spp
 data <- data.frame(stand, species,dbh,ba)
+str(data)
 #print(data)
 
 ```
@@ -46,6 +47,7 @@ Regression <- function(x=1:10, y=runif(10)){
 ### Test Function 
 ```{r}
 Regression()
+
 ```
 ### myData Run
 ```{r}
@@ -92,7 +94,7 @@ lrPlot(x=data$dbh, y=data$ba)
 # input: x = discrete variables (x= Acer, Pinus); y=runif(10))
 # output: anova model list and data summary 
 ####################################################################
-ANOVA <- function(x=as.factor(c(rep("Acer", 3), rep("Pine", 7))), y=runif(10)){
+ANOVA <- function(x=(c(rep("Acer", 3), rep("Pine", 7))), y=runif(10)){
   amod <- aov(y~x)
   
   out <- list(amod, summary(amod))
@@ -110,7 +112,7 @@ ANOVA()
 ```
 ### myData Run
 ```{r}
-#ANOVA(x=data$tree_spp, y=data$tree_dbh)
+ANOVA(x=data$species, y=data$dbh)
 ```
 
 ## ANOVA PLOT 
@@ -140,8 +142,8 @@ anovaPLot()
 ```
 ### anovaPlot(mydata)
 ```{r}
-#anovaPLot(x=data$tree_spp, y=data$tree_dbh)
-#anovaPLot(x=data$stand, y=data$dbh)
+
+anovaPLot(x=data$stand, y=data$dbh)
 ```
 ```{r}
 library(fGarch)
@@ -149,23 +151,40 @@ library(fGarch)
 
 ## MOCK DATA
 ```{r}
-#dbh
+# Assess true dbh
 hist(dbh)
 mean(dbh)
 dbh2<-na.omit(dbh)
 mean(dbh2)
 sd(dbh2)
+# mock data simulation 
 dbhNew<-rsnorm(1667, mean = 17.52, sd = 7.912, xi = 2.4)
 hist(dbhNew)
 
-#ba
+# Assess true ba
 hist(ba)
 ba2<-na.omit(ba)
 mean(ba2) #2.015
 sd(ba2) #1.96
-##
-#rep.int(1:), 5)
+summary(ba2)
 
+#Evaluate rgamma distribution 
+hist(rgamma(n=100, shape = 1,scale = 10))
+baNew <- rgamma(n=1667, shape = .2, scale = 10)
+hist(baNew)
+mean(baNew)
+summary(baNew)
 
+```
+## TEST REGRESSION FUNCTION ON MOCK DATA
+```{r}
+# call to regression function in global envi
+Regression(x=dbhNew, y=baNew)
+
+```
+## TEST lrPlot
+```{r}
+# call to lrPlot function in global envi
+lrPlot(x=dbhNew, y=baNew)
 ```
 

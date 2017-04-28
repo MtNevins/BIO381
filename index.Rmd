@@ -42,7 +42,7 @@ __________
   * [Model Functions](Nevins_homework_8.html)
   
 #### Homework 9 
-  * [DRAFT - Model Functions on Personal Data](Nevins_Homework_9.html)
+  * [Model Functions on Personal Data](Nevins_Homework_9.html)
 
 #### Homework 10 
   * [for loop assignment](Nevins_Homework_10.html)
