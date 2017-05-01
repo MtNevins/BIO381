@@ -19,6 +19,8 @@ ______
 ______________
 ### HOMEWORK   
 __________
+#### Homework 1: Links and fun fact sent to Nick
+  * [GitHub Profile](https://github.com/MtNevins)
 
 #### [Homework 2](homework2.html) 
 

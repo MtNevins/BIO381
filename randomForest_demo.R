@@ -1,13 +1,3 @@
----
-title: "randomForest_demo"
-author: "Matthias Nevins"
-date: "April 25, 2017"
-output: html_document
----
-## randomForest {r} package demo
-### Computational Biology, Univeristy of Vermont
-
-```{r}
 ### randomForest tutorial ###
 ### Computational Biology: Univeristy of Vermont 
 ### April 26, 2017
@@ -20,46 +10,43 @@ output: html_document
 # 
 # The package uses a random forest algorithm to sample data randomly 
 # and then construct and analyzes multiple random decision trees (ensemble). 
-# The performance of each random decision tree is compared and results are used to
+# The performance of each random decision tree is are compared used to
 # determine the mode of a classification or the mean of a regression. 
 # The model can be trained on a subset of the data and then tested for accuracy. 
 
 ## See notes on decision trees and random forest ## 
-```
 
-```{r}
+
+#-----------------------------------------------------
 ############ randomForest #######################
 
 # Begin by installing the randomForest package
-#install.packages("randomForest")
+install.packages("randomForest")
 library("randomForest")
 
 ## INPUTS ## 
-#help("randomForest")
+help("randomForest")
 # relevent input arguments 
-  # x = data frame or matrix of predictor variable(s)
-  # y = response vector (if factor, classification)
-  # ntree = number of decision trees to grow 
-  # mtry = Number of randomly sampled 
-    ## mtry should be a value lower than the total number of variables
-    ## for classification trees use the square root of number of  variables
-  # sampsize = number of rows that are randomly sampled for each tree 
-    ## sampsize should be lower than the total number of rows in your data set
-  # nodesize = minimum size of terminal nodes (larger the number smaller the tree)
+        # x = data frame or matrix of predictor variable(s)
+        # y = response vector (if factor, classification)
+        # ntree = number of decision trees to grow 
+        # mtry = Number of randomly sampled 
+            ## mtry should be a value lower than the total number of variables 
+            ## for classification trees use the square root of number of variables
+        # sampsize = number of rows that are randomly sampled for each tree 
+        # sampsize should be lower than the total number of rows in your data set
+        # nodesize = minimum size of terminal nodes (larger the number smaller the tree)
 
 ### OUTPUTS ##
 # predication by randomForest is the mean of the random decision trees
 # confusion matrix (classification) 
-```
-### EXAMPLE 1 
 
-```{r}
 #### EXAMPLE 1: Iris data ####
 # Call to "iris" data set available in R 
-#data(iris) 
-#View(iris) 
-#str(iris) # numeric predictor variables, Species response variable is catagorical
-#summary(iris)
+data(iris) 
+View(iris) 
+str(iris) # numeric predictor variables, Species variable is catagorical
+summary(iris)
 
 # Store iris in a new data fram 
 
@@ -114,11 +101,10 @@ table(irisPred, testData$Species)
 help("margin.randomForest")
 plot(margin(irisRF,testData$Species))
 
-```
 
-#### EXAMPLE 2
 
-```{r}
+##################### END OF EXAMPLE 1 ##############################
+
 #------------------------------------------------------
 ####### EXAMPLE 2: Using MASS package ##################
 
@@ -127,19 +113,18 @@ library(randomForest)
 library(MASS)
 
 # set seed 
-#help("set.seed")
+help("set.seed")
 set.seed(1234)
 
 # Store data "birthwt" data set from the MASS package into a DataFrame 
-
-#help("birthwt")
+help("birthwt")
 dFrame <- birthwt
 
 # Identify predictor variables and target variable
 # Identify catagorical target variable 
-#head(dFrame)
-#str(dFrame)
-#View(dFrame)
+head(dFrame)
+str(dFrame)
+View(dFrame)
 
 # see how many unique values are within each variable 
 # for "low"
@@ -168,7 +153,7 @@ str(dFrame) # we see that the numerical values for the
 
 # Acquire new library "caTools" to assist in the splitting of 
 # sampled data
-#help("caTools")
+help("caTools")
 library(caTools)
 
 ivar <- sample.split(Y = dFrame$low, SplitRatio = 0.7) 
@@ -208,7 +193,7 @@ sum(diag(tableP)/sum(tableP))
 # expressed graphically in 2-D
 # plots relationship b/w sensitivity and false positive rate (FPR)
 
-#install.packages("pROC")
+install.packages("pROC")
 library(pROC)
 pModProb <- predict(ranForMod, testD, type = "prob")
 print(pModProb)
@@ -222,5 +207,3 @@ bestmtry <- tuneRF(trainD, trainD$low, ntreeTry = 200,
                    trace = T, 
                    plot = T)
 
-
-```
