@@ -1,0 +1,129 @@
+---
+title: "Marsh Billings Summary Statistics"
+author: "Matthias Nevins"
+date: "May 2, 2017"
+output: html_document
+---
+
+### Read in data 
+```{r}
+# Read in CSV file
+myData<-read.csv("MBR_Overstory_obs_wrking.csv",stringsAsFactors = F, header=T) 
+#str(myData)
+#head(myData)
+opar <- par(no.readonly=TRUE)
+## Separate out observations on dead trees
+mbdead <- myData[myData$tree_alive=="FALSE",]
+## Now remove dead tree observations so the rest of your calculations are for live only.
+myData2 <- myData[myData$tree_alive=="TRUE",]
+#head(myData2)
+
+attach(myData2)
+```
+### Transform data structure 
+```{r}
+# Convert to factors 
+myData2$STAND <- as.factor(myData2$STAND)
+myData2$PLOT <- as.factor(myData2$PLOT)
+myData2$tree_spp <- as.factor(myData2$tree_spp)
+#str(myData2)
+```
+### Initial Observations 
+```{r}
+## Plot a histogram of tree DBH
+hist(myData2$tree_dbh,xlab="Tree DBH - INCHES",nclass=40,col="blue") 
+```
+```{r}
+table(STAND) 
+table(tree_spp)
+table(PLOT)
+## Look at a table of the frequency of tree species
+spptable <- table(tree_spp)
+spptable
+## assign that to a data.frame that is ordered by the least to most frequent species
+spptable <- data.frame(spptable)
+spptable <- spptable[order(spptable$Freq),]
+spptable
+## Rename the columns 
+names(spptable) <- c("spp","freq")
+barplot(spptable$freq,names.arg=spptable$spp,las=2)
+```
+### Exploring the aggregate function 
+```{r}
+##  aggregate some of the data by plot
+ba_plotsp <- aggregate(myData2$tree_ba,by=list(myData2$PLOT,myData2$tree_spp),sum)
+head(ba_plotsp)
+## Reorder
+ba_plotsp <- ba_plotsp[order(ba_plotsp$Group.1,ba_plotsp$Group.2),]
+names(ba_plotsp) <- c("plot","spp","sba")
+```
+```{r}
+## Aggregate stand totals
+ba_plot <- aggregate(myData2$tree_ba,by=list(myData2$PLOT),sum)
+names(ba_plot) <- c("plot","tba")
+hist(ba_plot$tba,xlab="BA (m^2/acre)",nclass=40,col="blue")
+head(ba_plot)
+```
+### Subset to portion of data 
+```{r}
+####################################
+# Subsett function on each stand 
+####################################
+# define expansion factor
+expf<-10
+# Load Libraries 
+library(plyr)
+```
+```{r}
+# STAND 1 
+stand1 <- subset(myData2, c(STAND==1))
+#str(stand1)
+table(stand1$tree_spp)
+boxplot(myData2$tree_dbh, xlab="Stand 1", ylab="DBH inches", col="blue")
+summary(stand1$tree_dbh)
+#--------------------
+```
+```{r}
+# STAND 2 
+stand2 <- subset(myData2, c(STAND==2))
+#str(stand2)
+table(stand2$tree_spp)
+boxplot(stand2$tree_dbh, xlab="Stand 2", ylab="DBH inches", col="blue")
+summary(stand2$tree_dbh)
+summary(stand2$tree_ba) # per tree (ft^2)
+```
+```{r}
+# Basal Area (ft^2)/acre 
+stand2<-subset(myData2, c(STAND==2))
+#head(stand2)
+stand2$ba_acre <-(length(stand2$STAND)/length(unique(stand2$PLOT)))*expf
+stand2BA<-unique(stand2$ba_acre)
+print(stand2BA)
+```
+```{r}
+# Tree Per Acre
+stand2$TPA<-sum(expf/stand2$tree_ba)/length(unique(stand2$PLOT))
+stand2TPA <- unique(stand2$TPA)
+stand2TPA
+```
+
+
+### More with the plyr library 
+```{r}
+####################################################
+## using the plyr library
+#############################################
+library(plyr)
+#install.packages("Rmisc")
+library(Rmisc)
+
+# Species richness by stand 
+sppR2<-ddply(myData2,"STAND", 
+            summarize, 
+            richness=length(unique(tree_spp)))
+
+barplot(height=sppR2$richness, names.arg = sppR2$STAND,xlab="Stand #", ylab="Species Richness", col="blue")
+
+
+```
+### More to come 

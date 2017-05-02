@@ -1,0 +1,177 @@
+---
+title: "COMPUTATIONAL BIOLOGY - FINAL PRESENTATION"
+author: "Matthias Nevins"
+date: "May 3, 2017"
+output: 
+  beamer_presentation:
+    colortheme: whale
+    fonttheme: serif
+    highlight: espresso
+    incremental: no
+    theme: Madrid
+---
+
+## Title: Adaptive forest management across diverse forest ownerships in southeastern Vermont, USA
+- PRESENTATION OUTLINE: 
+      + Research Objectives 
+      + Introduction 
+      + Research Questions
+      + Study Area 
+      + Methods  
+      + Use of R in landscape initialization 
+      + Questions & Discussion 
+      
+## RESEARCH OBJECTIVES 
+- Simulate forest change over time in response to projected climate change and under alternative forest management regimes.
+
+- Use forest landscape simulation modeling (LANDIS-II) to evaluate forest management decisions within a 10,000-acre forested landscape of mixed-ownership in southeastern Vermont, USA. 
+
+## INTRODUCTION 
+- GLOBAL CHANGE: represents a major challenge for forest resources managers 
+
+  + Climate change impacts – Increased temp., precip., drought, extreme weather event, 
+  
+  + Shifting disturbance regimes
+  
+  + Shifts in suitable habitat 
+  
+  + Increased threats from pest/pathogen and invasive species
+  
+  + Economic uncertainty
+  
+  + Societal drivers – land use
+
+## INTRODUCTION 
+
+\begin{picture}(320,250)
+\put(10,40){\includegraphics[height=6.8cm]
+{temp.png}}
+\put(180,40){\includegraphics[height=6.8cm]
+{precip.png}}
+\put(260,00){\begin{minipage}[t]{1\linewidth}
+{ }
+\end{minipage}}
+\end{picture}
+
+## INTRODUCTION 
+
++ Increasing uncertainty around future impacts on forest ecosystems 
+
+- Tool-box approach 
+
+    - Use of traditional and novel approaches 
+employ an iterative and adaptive process
+
++ *Utilize new tools*: Landscape simulation models 
+
+## RESEARCH QUESTIONS 
+
+ 1. How does species composition change within the landscape over time under two climate scenarios and three management regimes?
+
+
+ 2. How do differences in landowner behavior in regards to application of adaptive measures influence landscape-level resilience to climate change?
+
+## STUDY AREA 
+
++ Southeastern Vermont, USA 
+
++ 10,000 Acre (4,047 Hectare) Landscape
+
++ Centered on Marsh-Billings-Rockefeller National Historical Park – 500 acres 
+
+## STUDY AREA 
+
+\begin{picture}(320,250)
+\put(10,140){\includegraphics[height=4cm]
+{NewengalndMap.pdf}}
+\put(170,140){\includegraphics[height=4cm]
+{MBR_baseMapLandscape2.jpg}}
+\put(80,30){\includegraphics[height=4cm]
+{MBR_baseMapLandscapeZoom.jpg}}
+\put(260,00){\begin{minipage}[t]{1\linewidth}
+{ }
+\end{minipage}}
+\end{picture}
+
+## METHODS 
+
+- Use landscape simulation model to analyze change in species composition over time under two climate change scenarios and three management regimes 
+
+- LANDIS-II (v6.0) is a spatially explicit forest landscape       + simulation model
+      + simulates successional dynamics, seed dispersal, regeneration, and response to disturbances such as windthrow and harvesting
+      + 100 year simulation at 30x30m resolution 
+- LANDIS -> Output: 
+      + Total above ground biomass (AGB)/species at each time step
+      + From AGB ->  
+        - Relative importance (Curtis)
+        - Spp. diversity 
+        - Functional diversity 
+
+
+## METHODS - LANDIS-II
+
+\begin{picture}(320,250)
+\put(10,135){\includegraphics[height=4cm]
+{landisL.png}}
+\put(170,135){\includegraphics[height=4cm]
+{landisI.png}}
+\put(80,20){\includegraphics[height=4cm]
+{MBR_baseMapLandscape30x30.jpg}}
+\put(260,00){\begin{minipage}[t]{1\linewidth}
+{ }
+\end{minipage}}
+\end{picture}
+
+## MODEL ADVANTAGES AND LIMITATIONS 
+  + ADVANTAGES 
+      - Simulate forest succession overtime under user defined disturbance regimes (wind, fire, harvest)
+      - User defines species specific attributes 
+      - Works well at larger scale and with long lived organisms (TREES) 
+   + LIMITATIONS 
+      - Limited by base assumptions about sucession etc. 
+      - Limited by scale 
+      - Designed for landscapes dominated by woody vegetation 
+      - Should not be used as a prediction -> instead a range of possible outcomes 
+      - Highly random and stochastic 
+      
+## LANDSCAPE INITIALIZATION 
+  + Populating the landscape of grid cells with info about scecies composition. 
+    - Tracks "cohorts" of tree species
+    - EXAMPLE: cell 1
+        - Sugar Maple: (10,50,100)
+        - White Pine: (130)
+  + Use forest inventory data 
+    - Use of R to summarize inventory data 
+    
+## FOREST INVENTORY 
+
+\begin{picture}(320,250)
+\put(10,40){\includegraphics[height=7cm]
+{stand.png}}
+
+\put(260,00){\begin{minipage}[t]{1\linewidth}
+{ }
+\end{minipage}}
+\end{picture}
+
+## FOREST INVENTORY 
+
+\begin{picture}(320,250)
+\put(2,135){\includegraphics[height=4cm]
+{fixedR.png}}
+\put(110,135){\includegraphics[height=4cm]
+{variablR.png}}
+\put(220,135){\includegraphics[height=4cm]
+{prism.png}}
+\put(50,10){\includegraphics[height=4.2cm]
+{sampdat.png}}
+\put(260,00){\begin{minipage}[t]{1\linewidth}
+{ }
+\end{minipage}}
+\end{picture}
+
+# R: Summary Statistics 
+
+
+ 
+

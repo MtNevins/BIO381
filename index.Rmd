@@ -14,30 +14,33 @@ ______
   * [randomForest demo](randomForest_demo.html)
 
 ### Independant Research Presentation 
-  * []()
+  * [Final Presentation Beamer](FinalPres_Nevins.pdf)
+  * [Final Presentation Beamer.Rmd](FinalPres_Nevins.Rmd)
+  * [Final Presentation Summary Stats Code](Nevins_researchPresCode.html)
 
 ______________
-### HOMEWORK   
+### HOMEWORK ASSIGNMENTS  
 __________
 #### Homework 1: Links and fun fact sent to Nick
   * [GitHub Profile](https://github.com/MtNevins)
 
-#### [Homework 2](homework2.html) 
+#### Homework 2
+  * [Thinking on Paper](homework2.html) 
 
-####Homework 3
+#### Homework 3
   * [Diagram from Typora](Nevins_Diagram.html)
   * [Beamer.Rmd file](Nevins_Beamer.Rmd)
   * [Beamer.pdf](Nevins_Beamer.pdf)
   * [Original powerpoint in .pdf form](Nevins_ConservationEasementsPptx .pdf)
 
-####Homework 4
+#### Homework 4
   * [Creating an .csv file](STFdata.html)
   * [Regular Expressions: Problem solutions](RegulasExpressions_hwk4.html)
 
-####Homework 5
+#### Homework 5
   * [Homework 5 Solutions](homework5.html)
 
-####Homework 6
+#### Homework 6
   * [R Functions Assignment](Nevins_Homework6_Master.html)
   
 #### Homework 8 
@@ -48,9 +51,3 @@ __________
 
 #### Homework 10 
   * [for loop assignment](Nevins_Homework_10.html)
-
-  
-#### [GitHub Profile](https://github.com/MtNevins)
-
-
-
