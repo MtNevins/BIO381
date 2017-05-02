@@ -134,14 +134,6 @@ employ an iterative and adaptive process
       - Should not be used as a prediction -> instead a range of possible outcomes 
       - Highly random and stochastic 
       
-## LANDSCAPE INITIALIZATION 
-  + Populating the landscape of grid cells with info about scecies composition. 
-    - Tracks "cohorts" of tree species
-    - EXAMPLE: cell 1
-        - Sugar Maple: (10,50,100)
-        - White Pine: (130)
-  + Use forest inventory data 
-    - Use of R to summarize inventory data 
     
 ## FOREST INVENTORY 
 
